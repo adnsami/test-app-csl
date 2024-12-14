@@ -1,0 +1,10 @@
+X.Y.0-beta
+MAJOR.MINOR.PATCH
+
+^ : msot recent minor changes
+
+~: patch version
+
+npm install
+
+npm update
