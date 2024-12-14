@@ -5,7 +5,7 @@ import SignIn from './SignIn';
 import Profile from './Profile';
 import PrivateRoute from './routes/PrivateRoute';
 import CleanUp from './CleanUp';
-import Products from './products';
+import Products from './Products';
 
 const router = createBrowserRouter([
     {
