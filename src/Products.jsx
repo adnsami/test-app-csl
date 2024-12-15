@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export default function Products() {
-    const [products, setProducts] = useState([]);
-
     useEffect(() => {
         fetch('http://localhost:3000/products')
             .then((result) => result.json())
-            .then((response) => console.log(response))
-            .catch((error) => console.log(error));
+            .then((response) => console.log(response));
     }, []);
 
     const handleAddProduct = (event) => {
         event.preventDefault();
         const title = event.target.title.value;
         const price = event.target.price.value;
-
-        console.log(title, price);
 
         const product = {
             title,
@@ -30,17 +25,17 @@ export default function Products() {
             body: JSON.stringify(product),
         })
             .then((result) => result.json())
-            .then((response) => console.log(response))
-            .catch((error) => console.log(error));
+            .then((response) => console.log(response));
     };
     return (
         <div>
-            <h2>Products</h2>
+            <h1>Products</h1>
 
             <form onSubmit={handleAddProduct}>
                 <label htmlFor="">Title</label>
                 <br />
                 <input type="text" name="title" id="" />
+
                 <br />
 
                 <label htmlFor="">Price</label>
@@ -49,9 +44,12 @@ export default function Products() {
 
                 <br />
 
-                <input type="submit" value="Add" />
+                <input
+                    className="border border-purple-600 rounded px-4 py-1"
+                    type="submit"
+                    value="Add"
+                />
             </form>
-            <br />
         </div>
     );
 }
